@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html><!DOCTYPE html>
+<html>
+<head>
+  <title>Rathna offset</title>
+  <link rel="icon" href="images\1.png">
+  <body background="images\3.png"></body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+  h5{
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+			   font-size:50px;
+}
+  </style>
+ <script>
+	function price()
+	{
+		var st1 = new Array(0.5,0.4,0.5,0.3);
+		var fo1 = new Array(0.3,0.2,0.25,0.15);
+		var g1 = new Array(0.2,0.25,0.3);
+		var p1 = document.getElementById("p1");
+		var g = document.getElementById("g");
+		var st = document.getElementById("st");
+		var fo = document.getElementById("fo");
+		var value = g1[g.selectedIndex] + st1[st.selectedIndex] + fo1[fo.selectedIndex];
+		console.log(value);
+		p1.innerHTML = value + " per print";
+	}
+	function price2()
+	{
+		var st1 = new Array(0.5,0.4,0.5,0.3);
+		var fo1 = new Array(0.3,0.2,0.25,0.15);
+		var g1 = new Array(0.2,0.25,0.3);
+		var p2 = document.getElementById("p2");
+		var g = document.getElementById("g");
+		var st = document.getElementById("st");
+		var fo = document.getElementById("fo");
+		var q = document.getElementById("quantity");
+		
+		var value = g1[g.selectedIndex] + st1[st.selectedIndex] + fo1[fo.selectedIndex];
+		
+		console.log(value);
+		p2.innerHTML = value*(q.value);
+	}
+			
+   </script> 
+</head>
+<body>
+
+<div class="container-fluid" style="background-color:rgb(52, 2, 138);color:#fff;height:70px;">
+  <center><h1>Rathna Offset Printers</h1></center>
+  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="67" >
+  <ul class="nav navbar-nav">
+    <li ><a href="/">Home</a></li>
+    <li><a href="#">Product</a></li>
+    <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="card.html">Visiting card</a></li>
+        <li><a href="#">Greeting card</a></li>
+        <li><a href="#">Invitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact us</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</nav><!--nav bar code--><br><br>
+
+<h5><center><a href="/choosetm">Personalisation</a> &nbsp;&nbsp;&nbsp;<a href="#">Upload</a></center></h5> 
+<form action="/dashboard" method="post" enctype="multipart/form-data">
+    <br><br>
+    <div class="form-group">
+            <label for="filename">Filename</label>
+            <input type="text" id="filename" class="form-control" name="filename">
+    </div>
+   <center><input type="file" name="file" id="file"><br><br>
+  Substrate type:
+    <select name="Substrate"  onclick="price()" onchange="price()" id="st">
+      <option value="Gloss 0.5">Gloss</option>
+      <option value="Matte 0.4">Matte</option>
+      <option value="Textured 0.5">Textured</option>
+      <option value="Regular 0.3">Regular</option>
+    </select><br><br><br>
+  
+    
+    
+    Finishing operation:
+    
+    <select name="Finishing" onclick="price()" onchange="price()" id="fo">
+      <option value="UV-Coating 0.3">UV Coating </option>
+      <option value="Embossing 0.2">Embossing</option>
+      <option value="Gold-foil-stamping 0.25">Gold foil stamping</option>
+      <option value="Round-cornering 0.15">Round cornering</option>
+    </select>   <br> <br><br>
+
+    GSM:
+    
+    <select name="G" onclick="price()" onchange="price()" id="g">
+      <option value="GSM1 0.2">300</option>
+      <option value="GSM2 0.25">350</option>
+       <option value="GSM3 0.3">400</option>
+    </select>   <br> <br><br>
+    Estimated price:  <p id="p1"></p><br><br>
+
+     Quantity:
+    <input type="number" name="quantity" min="1" max="1000000" onchange="price2()" id="quantity"><br><br><br>
+	Total estimated price:<br>
+	<p id="p2"></p><br><br>
+     Note:
+    <textarea name="message" style="width:200px; height:100px;"></textarea>
+    <br>  <br>
+    
+    <button type="submit" class="button">Place order</button></center> 
+</form>
+<ul>
+	{% for name in names %}
+        <li><a href="/dashboard/{{name}}"><font size="5">{{name}}</font></a><br></li>
+	<li><a href="/remove/{{name}}">remove</a><br> </li>
+  	{% endfor %}
+</ul>
+</body>
+</html>

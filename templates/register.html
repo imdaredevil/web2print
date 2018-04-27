@@ -1,0 +1,128 @@
+
+{% block content %}<!DOCTYPE html>
+<html>
+<head>
+  <title>Rathna offset</title>
+  <link rel="icon" href="images\1.png">
+  <body background="images\33.jpg"></body>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" style="background-color:rgb(52, 2, 138);color:#fff;height:67px;">
+  <center><h1>Rathna Offset Printers</h1></center>
+  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="67">
+  <ul class="nav navbar-nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="#">Product</a></li>
+    <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="card.html">Visiting card</a></li>
+        <li><a href="#">Greeting card</a></li>
+        <li><a href="#">Invitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact us</a></li>
+  </ul>
+</nav><!--nav bar code-->
+
+<div class="container">
+    <center> <h2>Sign-Up</h2></center><br>
+   <form id="login-form" action="/auth/register" method="POST">
+        <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text" id="name" class="form-control" name="name">
+        </div>
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" id="uname" class="form-control" name="uname">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" name="password">
+        </div>
+        <div class="form-group">
+            <label for="phone">Mobile no</label>
+            <input type="text" id="phone" class="form-control" name="phone"><br>
+	<p>**Please enter the valid mobile number to get OTP</p>
+        </div>
+	<div class="g-recaptcha" data-sitekey="6Lc59kcUAAAAAC3Egs2g-CUG_W7qW5Nd-sCPyMvd"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+   <!-- <form class="form-horizontal" action="/auth/register" method="POST">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="First name"></label>
+            <div class="col-sm-10">          
+              <input type="First name" class="form-control" id="pwd"  name="First name" placeholder="First name">
+            </div>
+          </div>
+          <form class="form-horizontal" action="/action_page.php">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Last name"></label>
+                <div class="col-sm-10">          
+                  <input type="Last name" class="form-control" id="Last"  name="Last name" placeholder="Last name">
+                </div>
+              </div>
+              
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email"></label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email Id">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email"></label>
+        <div class="col-sm-10">
+          <input type="Phone no" class="form-control" id="email"  name="Phone no" placeholder="Phone no">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd"></label>
+        <div class="col-sm-10">          
+          <input type="User name:" class="form-control" id="pwd"  name="uname" placeholder="User name">
+        </div>
+    </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="password"></label>
+        <div class="col-sm-10">          
+          <input type="password" class="form-control" id="pwd"  name="pwd" placeholder="Password">
+        </div>
+      </div>
+      
+      
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default"> Submit</a></button>
+        </div>
+      </div>
+    </form> !-->
+  </div>
+  
+  
+  </body>
+  {% endblock %}
+  </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rathna offset</title>
+  <link rel="icon" href="images\1.png">
+  <body background="images\3.png"></body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  h2{color:rgb(14, 1, 1)}
+body, html {height: 100%}
+
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+/*button*/
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ 
+
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" style="background-color:rgb(52, 2, 138);color:#fff;height:70px;">
+  <center><h1>Rathna Offset Printers</h1></center>
+  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="67" >
+  <ul class="nav navbar-nav">
+    <li ><a href="home.html">Home</a></li>
+    <li><a href="#">Product</a></li>
+    <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="card.html">Visiting card</a></li>
+        <li><a href="#">Greeting card</a></li>
+        <li><a href="#">Invitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact us</a></li>
+  </ul>
+</nav><!--nav bar code--><div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  
+<!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><center><button class="button"><span>Upload </span></button></center><button class="button"><span>Personalisation </span></button>-->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<center><button  class="button"><span><a href="Upload.html">Upload</a></span></button>&nbsp;&nbsp;&nbsp;&nbsp; <button class="button" ><span><a href="Personalisation.html">Personalisation</a></span></button>  </center>>
+    
+  </div>
+  <div class="w3-display-middle">
+    <h2 class="w3-jumbo w3-animate-top">VISITING CARDS</h2>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center"></p>
+  </div>
+  
+</div>
+
+
+
+</body>
+</html>

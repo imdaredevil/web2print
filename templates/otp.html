@@ -1,0 +1,63 @@
+{% block content %}<!DOCTYPE html>
+<html>
+<head>
+  <title>Rathna offset</title>
+  <link rel="icon" href="images\1.png">
+  <body background="images\33.jpg"></body>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" style="background-color:rgb(52, 2, 138);color:#fff;height:67px;">
+  <center><h1>Rathna Offset Printers</h1></center>
+  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="67">
+  <ul class="nav navbar-nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="#">Product</a></li>
+    <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="card.html">Visiting card</a></li>
+        <li><a href="#">Greeting card</a></li>
+        <li><a href="#">Invitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact us</a></li>
+    
+  </ul>
+</nav><!--nav bar code-->
+
+<div class="container">
+    <center> <h2>VERIFICATION</h2></center><br>
+   <form id="login-form" action="/otp" method="POST">
+        <div class="form-group">
+            <label for="userid">OTP</label>
+            <input type="text" id="OTP" class="form-control" name="OTP">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+  
+  
+  </body>
+  {% endblock %}
+  </html>

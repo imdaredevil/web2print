@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rathna offset</title>
+  <link rel="icon" href="images\1.png">
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+  
+ 
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" style="background-color:rgb(52, 2, 138);color:#fff;height:70px;">
+  <center><h1>Rathna Offset Printers</h1></center>
+  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="67" >
+  <ul class="nav navbar-nav">
+    <li ><a href="home.html">Home</a></li>
+    <li><a href="#">Product</a></li>
+    <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="card.html">Visiting card</a></li>
+        <li><a href="#">Greeting card</a></li>
+        <li><a href="#">Invitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact us</a></li>
+  <li><a href="/logout">Logout</a></li>
+
+  </ul>
+</nav><!--nav bar code-->
+<form><br><br>     
+        
+    <fieldset>     
+            <legend> <center>Online payment:</center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="images/11.png" width="100px" height="100px">&nbsp;&nbsp; 
+                <img src="images/12.png" width="100px" height="100px"> 
+                &nbsp;&nbsp; 
+                <img src="images/13.png" width="100px" height="100px">
+                 </legend> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Card Number&nbsp;:&nbsp;
+              <input type="text" id="cc_no" name="cc_no" value="4111111111111111"/><br><br>
+              &nbsp;&nbsp;
+              Card type&nbsp;:
+              <select name="Substrate type">
+                    <option value="Gloss">Master</option>
+                    <option value="Matte">Maestro</option>
+                    <option value="Textured">Rupay</option>
+                    <option value="Regular">Visa</option>
+                  </select><br><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Expiry Date&nbsp;:&nbsp;<select id="cc_exp_mm" name="cc_exp_mm">
+                        <option value="">Month</option>
+                        <option value="1" selected="selected">January</option>                                 
+                        <option value="2">February</option>                              
+                        <option value="3">March</option>                           
+                        <option value="4">April</option>                           
+                        <option value="5">May</option>                            
+                        <option value="6">June</option>                            
+                        <option value="7">July</option>                           
+                        <option value="8">August</option>                             
+                        <option value="9">September</option>                     
+                        <option value="10">October</option>                              
+                        <option value="11">November</option>                             
+                        <option value="12">December</option>                             
+                    </select></td>                         
+                <td width="20">&nbsp;</td>                         
+                <td><select id="cc_exp_yyyy" name="cc_exp_yyyy">
+<option value="">Month</option>
+                        <option value="2016" selected="selected">2016</option>                                 
+                        <option value="2017">2017</option>                              
+                        <option value="2018">2018</option>                           
+                        <option value="2019">2019</option>                           
+                        <option value="2020">2020</option>                            
+                        <option value="2021">2021</option>                            
+                        <option value="2022">2022</option>                           
+                        <option value="2023">2023</option>                             
+                        <option value="2024">2024</option>                     
+                        <option value="2025">2025</option>                              
+                        <option value="2026">2026</option>                             
+                        <option value="2027">2027</option>
+<option value="2028">2028</option>                             
+                        <option value="2029">2029</option>
+<option value="2030">2030</option>
+                    </select>   <br><br> 
+                Security Code:   
+                <input id="cvv" type="text" size="5" name="cvv" value="111"/> </center><br><br> 
+            <center><button  class="button"><span><a href="#">Submit</a></span></button></center>
+                </form>
+                   
+            </body>
+            </html>              

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rathna offset</title>
+  <link rel="icon" href="images\1.png">
+  <body background="images\3.png"></body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+  
+ 
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" style="background-color:rgb(52, 2, 138);color:#fff;height:70px;">
+  <center><h1>Rathna Offset Printers</h1></center>
+  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="67" >
+  <ul class="nav navbar-nav">
+    <li ><a href="/">Home</a></li>
+    <li><a href="#">Product</a></li>
+    <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="card.html">Visiting card</a></li>
+        <li><a href="#">Greeting card</a></li>
+        <li><a href="#">Invitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact us</a></li>
+  
+  </ul>
+</nav><!--nav bar code-->
+<form action="/action_page.php"><center><br><br>
+  Substrate type:
+    <select name="Substrate type">
+      <option value="Gloss">Gloss</option>
+      <option value="Matte">Matte</option>
+      <option value="Textured">Textured</option>
+      <option value="Regular">Regular</option>
+    </select><br><br><br>
+  
+    
+    
+    Finishing operation:
+    
+    <select name="Substrate type">
+      <option value="Gloss">UV Coating </option>
+      <option value="Matte">Embossing</option>
+      <option value="Textured">Gold foil stamping</option>
+      <option value="Regular">Round cornering</option>
+    </select>   <br> <br><br>
+    Estimated price:<br><br>
+
+     Quantity:
+    <input type="number" name="quantity" min="1" max="1000000"><br><br><br>
+    Delivery address:
+    <textarea name="message" style="width:200px; height:100px;"></textarea>
+    <br>  <br>
+    <button  class="button"><span><a href="pay.html">Pay</a></span></button></center>
+   </form>
+
+
+</body>
+</html>

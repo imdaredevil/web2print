@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rathna offset</title>
+  <link rel="icon" href="images/1.png">
+  <body background="images\8.jpg"></body>
+  <meta http-equiv="expires" content="no-cache" />
+  <FilesMatch "\.(ttf|otf|eot)$">
+<IfModule mod_headers.c>
+<!--Header set Access-Control-Allow-Origin "*" -->
+</IfModule>
+</FilesMatch>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Note: Try to remove the following lines to see the effect of CSS positioning */
+    {% for i in fonts %}
+    @font-face{
+	font-family: '{{i[0:2]}}'
+	src: URL("fonts/{{i}}") format('ttf');
+	}
+	 {% endfor %}
+    .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+    .affix + .container-fluid {
+        padding-top: 70px;
+    }
+	.div1 {
+    border: 2px solid;
+    width:105px;
+    resize: both;
+    overflow: auto;
+    position: absolute;
+}
+    </style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+   var style = window.getComputedStyle(event.target, null); 
+var dm = document.getElementById(ev.target.id);
+dm.style.position = "absolute";
+//alert((ev.target.id) + ',' + (parseInt(style.getPropertyValue("left"),10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"),10) - event.clientY));
+	
+    event.dataTransfer.setData("text",
+    (ev.target.id) + ',' + (parseInt(style.getPropertyValue("left"),10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"),10) - event.clientY));
+}
+
+function drop(ev) {
+	event.preventDefault(); 
+ var offset = event.dataTransfer.getData("text").split(',');
+	//alert(offset[0]);
+    var dm = document.getElementById(offset[0]);
+   
+    dm.style.left = (event.clientX + parseInt(offset[1],10)) + 'px';
+    dm.style.top = (event.clientY + parseInt(offset[2],10)) + 'px';
+	console.log(dm.style.top);
+    return false;
+}
+
+function myfunc(ele){
+	var pi = ele.getElementsByTagName("p");
+	for(var i=0;i<pi.length;i++)
+		{
+			var style = window.getComputedStyle(pi[i], null).getPropertyValue('font-size');
+			var fontSize = parseFloat(style); 
+			//pi[i].style.fontSize = (fontSize + 1) + "px";
+			console.log(ele.style.height);
+			pi[i].style.fontSize= (parseFloat(ele.style.height) - 5) + "px";
+			console.log(pi[i].style.fontSize);
+		}
+	}
+
+function getimg(){
+	var na = document.getElementById("drag5");
+	var logo = document.getElementById("drag4");
+	var add3 = document.getElementById("drag3");
+	var add2 = document.getElementById("drag2");
+	var add1 = document.getElementById("drag1");
+	var img = document.getElementById("base");
+	var pho = document.getElementById("drag6");
+	img = img.getBoundingClientRect();
+        var il = parseInt(img.left + window.scrollX);
+	 var it = parseInt(img.top + window.scrollY);	
+	var namet = document.getElementById("namet");
+	var ki = window.getComputedStyle(namet,null).getPropertyValue('font-size');
+	var link = "/getphoto?il=" + il + "&it=" + it + "&nal=" + parseInt(na.style.left) + "&nat=" + parseInt(na.style.top) + "&a1l=" + parseInt(add1.style.left) + "&a1t=" + parseInt(add1.style.top) +  "&a2l=" + parseInt(add2.style.left) + "&a2t=" + parseInt(add2.style.top) +   "&a3l=" + parseInt(add3.style.left) + "&a3t=" + parseInt(add3.style.top) + "&lol=" + parseInt(logo.style.left) + "&lot=" + parseInt(logo.style.top) + "&tsize=" + ki + "&phl=" + parseInt(pho.style.left) + "&pht=" + parseInt(pho.style.top);
+	location.href = link;
+	}
+</script>
+  </head>
+<body>
+<div class="container-fluid" style="background-color:rgb(52, 2, 138);color:#fff;height:70px;">
+  <center><h1>Rathna Offset Printers</h1></center>
+  
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="67" >
+  <ul class="nav navbar-nav">
+    <li ><a href="/">Home</a></li>
+    
+    <li><a href="#">product</a></li>
+    <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/card">Visiting card</a></li>
+        <li><a href="#">Greeting card</a></li>
+        <li><a href="#">Invitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact us</a></li>
+  <li><a href="/logout">Logout</a></li>
+  
+  </ul>
+</nav><!--nav bar code-->
+
+
+<div class="container page-form">
+    <form id="upload-form" action="/order" method="POST"  enctype = "multipart/form-data">
+	<div class="form-group">
+            <label for="filename">Name</label>
+            <input type="text" id="filename" class="form-control" name="name">
+        </div>	
+	<div class="form-group">
+            <label for="filename">Designation</label>
+            <input type="text" id="filename" class="form-control" name="address1">
+        </div>	
+	<div class="form-group">
+            <label for="filename">Company name</label>
+            <input type="text" id="filename" class="form-control" name="address2">
+        </div>	
+	<div class="form-group">
+            <label for="filename">Address </label>
+            <input type="text" id="filename" class="form-control" name="address3">
+        </div>	
+	<div class="form-group">
+            <label for="filename">Contact No </label>
+            <input type="text" id="filename" class="form-control" name="phone">
+        </div>	
+	<div class="form-group">
+            <label for="color">Text Color</label>
+	    <input type="color" id="color" name="color">
+        </div>
+	 <div class="form-group">
+            <label for="file">Logo</label>
+           <input id="file" name="logo" type="file">
+        </div>
+	<div class="form-group">
+		<label for="font-style">Font Name</label>
+		<select name="font-style" id="font-style">
+		{% for i in fonts %}
+		<option value="{{i}}"><p style="font-family:{{i[0:2]}}">{{i}}</p></option>
+		{% endfor %}		
+		</select>
+	</div>
+	<button type="submit" class="btn btn-success">Submit</button>
+    </form>
+<div ondrop="drop(event)" ondragover="allowDrop(event)">
+<img src="{{fil}}" style="max-height: 100%; max-width: 100%; postion:relative;" id="base"></img>
+<div class="div1"  draggable="true" ondragstart="drag(event)" id="drag5" onclick="myfunc(this)" style="left:45px;top:609px"><p style="resize:both; font-family:{{filsty[0:2]}}; color:{{color}}" id="namet">{{na}}</p></div>
+<div class="div1" draggable="true" ondragstart="drag(event)" id="drag1" onclick="myfunc(this)" style="left:45px;top:649px"><p  style="resize:both; font-family:{{filsty[0:2]}}; color:{{color}}">{{add1}}</p></div>
+<div class="div1" draggable="true" ondragstart="drag(event)" id="drag2" onclick="myfunc(this)" style="left:45px;top:689px"><p style="resize:both; font-family:{{filsty[0:2]}};color:{{color}}" >{{add2}}</p></div>
+<div class="div1" draggable="true" ondragstart="drag(event)" id="drag3" onclick="myfunc(this)" style="left:45px;top:729px"><p  style="resize:both; font-family:{{filsty[0:2]}}; color:{{color}}">{{add3}}</p></div>
+<div class="div1" draggable="true" ondragstart="drag(event)" id="drag6" onclick="myfunc(this)" style="left:45px;top:769px"><p  style="resize:both; font-family:{{filsty[0:2]}}; color:{{color}}">{{phone}}</p></div>
+<div class="div1" draggable="true" ondragstart="drag(event)" id="drag4"  style="left:45px;top:809px"><img  style="height:100px;width:100px;object-fit:cover;padding:5px" src="data:image/png;base64, {{fik}}" ></img></div>
+<button onclick="getimg()" class="btn btn-success">get photo</a>
+</div>
+</body>
+</html>
+
